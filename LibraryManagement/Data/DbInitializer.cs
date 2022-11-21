@@ -18,12 +18,16 @@ namespace LibraryManagement.Data
 
 
                 // Add Customers
+                var linet = new Customer { Name = "Linet Achieng" };
+
                 var justin = new Customer { Name = "Justin Noon" };
 
                 var willie = new Customer { Name = "Willie Parodi" };
 
                 var leoma = new Customer { Name = "Leoma  Gosse" };
 
+
+                context.Customers.Add(linet);
                 context.Customers.Add(justin);
                 context.Customers.Add(willie);
                 context.Customers.Add(leoma);
@@ -48,10 +52,22 @@ namespace LibraryManagement.Data
                     new Book { Title = "If You're Not First, You're Last"},
                     new Book { Title = "Sell To Survive"}
                 }
+
+                };
+                var authorKiyosaki = new Author
+                {
+                    Name = "Robert Kiyosaki",
+                    Books = new List<Book>()
+                {
+                    new Book { Title = "Rich Dad Poor Dad"},
+                    new Book { Title = "Why A students work for C student and B students for the government"},
+                }
+
                 };
 
                 context.Authors.Add(authorDeMarco);
                 context.Authors.Add(authorCardone);
+                context.Authors.Add(authorKiyosaki);
 
                 context.SaveChanges();
             }
