@@ -43,6 +43,15 @@ namespace LibraryManagement.Data
                 }
                 };
 
+                var authorDhal = new Author
+                {
+                    Name = "Ruby Dhal",
+                    Books = new List<Book>()
+                {
+                    new Book { Title = "My Hope For Tomorrow" },
+                }
+                };
+
                 var authorCardone = new Author
                 {
                     Name = "Grant Cardone",
@@ -68,6 +77,7 @@ namespace LibraryManagement.Data
                 context.Authors.Add(authorDeMarco);
                 context.Authors.Add(authorCardone);
                 context.Authors.Add(authorKiyosaki);
+                context.Authors.Add(authorDhal);
 
                 context.SaveChanges();
             }
